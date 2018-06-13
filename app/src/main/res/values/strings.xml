@@ -13,4 +13,12 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+
+    <!--Alert Modals-->
+    <string name="defaultErrorTitle">Uh-oh!</string>
+    <string name="noInternet">No internet connection</string>
+    <string name="defaultDismissText">DISMISS</string>
+    <string name="genericError">Something seems fishy. Please try again</string>
+    <string name="noResultsFound">No results found</string>
+    <string name="title_activity_splash_screen">SplashScreenActivity</string>
 </resources>
