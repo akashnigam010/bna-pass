@@ -20,9 +20,6 @@ import java.util.List;
 import in.bananaa.pass.R;
 import in.bananaa.pass.dto.GenericResponse;
 
-/**
- * Created by akashnigam on 14/06/18.
- */
 
 public class Utils {
 

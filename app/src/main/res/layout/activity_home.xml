@@ -4,13 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="in.bananaa.pass.SplashScreenActivity"
-    tools:showIn="@layout/activity_splash_screen">
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Hello There!"/>
+    tools:context="in.bananaa.pass.HomeActivity">
 
 </android.support.constraint.ConstraintLayout>

@@ -6,19 +6,14 @@
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">LOGIN</string>
     <string name="action_sign_in_short">Sign in</string>
-    <string name="error_invalid_email">This email address is invalid</string>
-    <string name="error_invalid_password">This password is too short</string>
-    <string name="error_incorrect_password">This password is incorrect</string>
-    <string name="error_field_required">This field is required</string>
-    <string name="permission_rationale">"Contacts permissions are needed for providing email
-        completions."
-    </string>
+    <string name="error_user_id_required">Please enter user id</string>
+    <string name="error_password_required">Please enter password</string>
 
     <!--Alert Modals-->
     <string name="defaultErrorTitle">Uh-oh!</string>
     <string name="noInternet">No internet connection</string>
     <string name="defaultDismissText">DISMISS</string>
-    <string name="genericError">Something seems fishy. Please try again</string>
+    <string name="genericError">Something gone wrong. Please try again</string>
     <string name="noResultsFound">No results found</string>
     <string name="title_activity_splash_screen">SplashScreenActivity</string>
 </resources>
