@@ -16,4 +16,11 @@
     <string name="genericError">Something gone wrong. Please try again</string>
     <string name="noResultsFound">No results found</string>
     <string name="title_activity_splash_screen">SplashScreenActivity</string>
+
+    <!--Scan Screen-->
+    <string name="scan_code">Scan QR</string>
+
+    <!--Home Screen-->
+    <string name="welcome_message">Press the below button to start scanning</string>
+
 </resources>

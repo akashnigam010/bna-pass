@@ -80,7 +80,7 @@ public class Utils {
     }
 
     public static void responseError(Activity activity, GenericResponse response) {
-        Toast.makeText(activity, activity.getString(R.string.genericError), Toast.LENGTH_SHORT).show();
+        Toast.makeText(activity, response.getStatusCodes().getStatusCode().get(0).getDescription(), Toast.LENGTH_SHORT).show();
     }
 
     public static void responseFailure(Activity activity) {

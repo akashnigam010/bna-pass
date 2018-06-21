@@ -2,9 +2,10 @@ package in.bananaa.pass.dto;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class ArrayOfStatusCode {
+public class ArrayOfStatusCode implements Serializable {
 
     @SerializedName("statusCode")
     private List<StatusCode> statusCode;

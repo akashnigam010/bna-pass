@@ -6,6 +6,7 @@ import android.annotation.TargetApi;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.KeyEvent;
@@ -37,7 +38,9 @@ public class LoginActivity extends AppCompatActivity {
 
     private AppCompatActivity mContext;
 
+    private TextInputLayout tilUserId;
     private AutoCompleteTextView mUserIdView;
+    private TextInputLayout tilPassword;
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
@@ -52,9 +55,11 @@ public class LoginActivity extends AppCompatActivity {
         if (PreferenceManager.isUserLoggedIn()) {
             startHomeActivity();
         }
-        // Set up the login form.
-        mUserIdView = (AutoCompleteTextView) findViewById(R.id.userId);
-        mPasswordView = (EditText) findViewById(R.id.password);
+
+        mUserIdView = findViewById(R.id.userId);
+        tilUserId =  findViewById(R.id.tilUserId);
+        tilPassword = findViewById(R.id.tilPassword);
+        mPasswordView = findViewById(R.id.password);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
@@ -66,7 +71,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        mSignInButton = (Button) findViewById(R.id.signInButton);
+        mSignInButton = findViewById(R.id.signInButton);
         mSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -84,11 +89,9 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
-        // Reset errors.
         mUserIdView.setError(null);
         mPasswordView.setError(null);
 
-        // Store values at the time of the login attempt.
         String userId = mUserIdView.getText().toString();
         String password = mPasswordView.getText().toString();
 
@@ -111,7 +114,7 @@ public class LoginActivity extends AppCompatActivity {
             try {
                 showProgress(true);
                 JSONObject jsonObject = new JSONObject();
-                jsonObject.put("userId", userId);
+                jsonObject.put("id", userId);
                 jsonObject.put("password", password);
                 StringEntity entity = new StringEntity(jsonObject.toString());
                 AsyncHttpClient client = new AsyncHttpClient();
@@ -187,6 +190,8 @@ public class LoginActivity extends AppCompatActivity {
         mUserIdView.setTypeface(Utils.getRegularFont(this));
         mPasswordView.setTypeface(Utils.getRegularFont(this));
         mSignInButton.setTypeface(Utils.getRegularFont(this));
+        tilUserId.setTypeface(Utils.getRegularFont(this));
+        tilPassword.setTypeface(Utils.getRegularFont(this));
     }
 }
 

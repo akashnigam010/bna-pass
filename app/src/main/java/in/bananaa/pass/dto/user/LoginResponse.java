@@ -2,9 +2,11 @@ package in.bananaa.pass.dto.user;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
+
 import in.bananaa.pass.dto.GenericResponse;
 
-public class LoginResponse extends GenericResponse {
+public class LoginResponse extends GenericResponse implements Serializable {
 
     @SerializedName("user")
     private User user;
