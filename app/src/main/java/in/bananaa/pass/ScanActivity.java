@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.SparseArray;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.google.android.gms.vision.barcode.Barcode;
@@ -35,11 +36,24 @@ public class ScanActivity extends AppCompatActivity implements BarcodeReader.Bar
     private Toolbar customizeToolbar() {
         Toolbar toolbar = findViewById(R.id.scan_toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("");
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        // add back arrow to toolbar
+        if (getSupportActionBar() != null){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
+        }
+
         tvTitle = findViewById(R.id.scan_toolbar_title);
         return toolbar;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

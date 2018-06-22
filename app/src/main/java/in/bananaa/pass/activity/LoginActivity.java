@@ -8,6 +8,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
@@ -37,7 +38,7 @@ import in.bananaa.pass.util.Utils;
 public class LoginActivity extends AppCompatActivity {
 
     private AppCompatActivity mContext;
-
+    private TextView tvTitle;
     private TextInputLayout tilUserId;
     private AutoCompleteTextView mUserIdView;
     private TextInputLayout tilPassword;
@@ -81,7 +82,18 @@ public class LoginActivity extends AppCompatActivity {
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
+
+        customizeToolbar();
         setFont();
+    }
+
+    private Toolbar customizeToolbar() {
+        Toolbar toolbar = findViewById(R.id.login_toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        tvTitle = findViewById(R.id.login_toolbar_title);
+        return toolbar;
     }
 
     private void attemptLogin() {
@@ -187,6 +199,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void setFont() {
+        tvTitle.setTypeface(Utils.getRegularFont(this));
         mUserIdView.setTypeface(Utils.getRegularFont(this));
         mPasswordView.setTypeface(Utils.getRegularFont(this));
         mSignInButton.setTypeface(Utils.getRegularFont(this));
